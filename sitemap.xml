@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://davekim3872.github.io/2020/08/31/pyspark-use-scala-udf/</loc>
+    
+    <lastmod>2020-08-31</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://davekim3872.github.io/2020/08/14/R-tidyverse-one/</loc>
     
     <lastmod>2020-08-31</lastmod>
@@ -241,6 +248,27 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://davekim3872.github.io/tags/scala/</loc>
+    <lastmod>2020-08-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://davekim3872.github.io/tags/pyspark/</loc>
+    <lastmod>2020-08-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://davekim3872.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
+    <lastmod>2020-08-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -273,6 +301,13 @@
   
   <url>
     <loc>https://davekim3872.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7%E5%92%8C%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2020-08-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://davekim3872.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%85%B7%E7%9B%B8%E5%85%B3/</loc>
     <lastmod>2020-08-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
