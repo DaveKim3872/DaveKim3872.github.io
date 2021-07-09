@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Leetcode 31. 下一个排列</title>
+      <link href="/2021/07/09/Leetcode-31-next-permutation/"/>
+      <url>/2021/07/09/Leetcode-31-next-permutation/</url>
+      
+        <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/next-permutation/">31. 下一个排列 - 力扣（LeetCode） (leetcode-cn.com)</a></p><p>看看这个链接！评论区有人API一把梭…不行 我用的是Java</p><p>理解题解：两轮从尾部开始的扫描，第一轮找出第一个顺序对<code>nums[i], nums[i+1]</code>，以此为分界，之后为倒序。第二轮找出后面倒序的部分里从后往前第一个大于<code>nums[i]</code>的元素<code>nums[j]</code>，和<code>nums[i]</code>交换。此时后面还是倒序（因为<code>nums[j]&gt;nums[i]</code>，<code>nums[j+1]&lt;nums[i]</code>， <code>nums[j-1]&gt;nums[j]</code>），所以只要用双指针往中央扫描、前后交换的方式排一下序就好了。一共涉及三次扫描操作，复杂度<code>O(N)</code>。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">nextPermutation</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = nums.length - <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; nums[i] &gt;= nums[i+<span class="number">1</span>]) &#123;</span><br><span class="line">            --i; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> j = nums.length - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(j &gt;= i+<span class="number">1</span> &amp;&amp; nums[j] &lt;= nums[i]) &#123;</span><br><span class="line">                --j;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(nums, i, j);</span><br><span class="line">        &#125;</span><br><span class="line">        reverse(nums, i+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// easy</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> begin)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = begin, right = nums.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt; right) &#123;</span><br><span class="line">            swap(nums, left, right);</span><br><span class="line">            left++;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 刷题记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> medium difficulty </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>NLP佛脚笔记</title>
       <link href="/2021/01/23/NLP-cheatsheet-notes/"/>
       <url>/2021/01/23/NLP-cheatsheet-notes/</url>
