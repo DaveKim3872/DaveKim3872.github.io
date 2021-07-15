@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://davekim3872.github.io/2021/07/15/australia-tt-1-20-7/</loc>
+    <lastmod>2021-07-15</lastmod>
+  </url>
+  <url>
+    <loc>https://davekim3872.github.io/2020/08/12/jupyter-notebook-R/</loc>
+    <lastmod>2021-07-15</lastmod>
+  </url>
+  <url>
     <loc>https://davekim3872.github.io/2021/07/15/leetcode-1846/</loc>
     <lastmod>2021-07-15</lastmod>
   </url>
@@ -43,10 +51,6 @@
   <url>
     <loc>https://davekim3872.github.io/2020/08/15/webpages-analyze/</loc>
     <lastmod>2020-08-20</lastmod>
-  </url>
-  <url>
-    <loc>https://davekim3872.github.io/2020/08/12/jupyter-notebook-R/</loc>
-    <lastmod>2020-08-14</lastmod>
   </url>
   <url>
     <loc>https://davekim3872.github.io/2020/08/13/leetcode-two-sum-three-sum/</loc>

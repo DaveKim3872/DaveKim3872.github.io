@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://davekim3872.github.io/2021/07/15/australia-tt-1-20-7/</loc>
+    
+    <lastmod>2021-07-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://davekim3872.github.io/2020/08/12/jupyter-notebook-R/</loc>
+    
+    <lastmod>2021-07-15</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://davekim3872.github.io/2021/07/15/leetcode-1846/</loc>
     
     <lastmod>2021-07-15</lastmod>
@@ -75,13 +89,6 @@
     <loc>https://davekim3872.github.io/2020/08/15/webpages-analyze/</loc>
     
     <lastmod>2020-08-20</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://davekim3872.github.io/2020/08/12/jupyter-notebook-R/</loc>
-    
-    <lastmod>2020-08-14</lastmod>
     
   </url>
   
@@ -325,6 +332,20 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://davekim3872.github.io/tags/F1-2020/</loc>
+    <lastmod>2021-07-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://davekim3872.github.io/tags/Melbourne-Gran-Prix/</loc>
+    <lastmod>2021-07-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -371,6 +392,13 @@
   
   <url>
     <loc>https://davekim3872.github.io/categories/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E5%B0%8F%E6%8A%84/</loc>
+    <lastmod>2021-07-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://davekim3872.github.io/categories/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E8%BD%A6/</loc>
     <lastmod>2021-07-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
