@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Leetcode 1846. 减小和重新排列数组后的最大元素</title>
+      <link href="/2021/07/15/leetcode-1846/"/>
+      <url>/2021/07/15/leetcode-1846/</url>
+      
+        <content type="html"><![CDATA[<p>原题链接：<a href="https://leetcode-cn.com/problems/maximum-element-after-decreasing-and-rearranging/">https://leetcode-cn.com/problems/maximum-element-after-decreasing-and-rearranging/</a></p><p><em>给你一个正整数数组 <code>arr</code> 。请你对 <code>arr</code> 执行一些操作（也可以不进行任何操作），使得数组满足以下条件：</em></p><p><em><code>arr</code> 中 第一个 元素必须为 1 。</em><br><em>任意相邻两个元素的差的绝对值 小于等于 <code>1</code> ，也就是说，对于任意的 <code>1 &lt;= i &lt; arr.length</code> （数组下标从 <code>0</code> 开始），都满足 <code>abs(arr[i] - arr[i - 1]) &lt;= 1</code> 。<code>abs(x)</code> 为 <code>x</code> 的绝对值。</em><br><em>你可以执行以下 2 种操作任意次：</em></p><p><em>减小 <code>arr</code> 中任意元素的值，使其变为一个 更小的正整数 。</em><br><em>重新排列 <code>arr</code> 中的元素，你可以以任意顺序重新排列。</em><br><em>请你返回执行以上操作后，在满足前文所述的条件下，<code>arr</code> 中可能的 最大值 。</em></p><p>易证满足上述条件的数组要满足非严格单调递增分布（脑补一下），排序数组后强制使第一位为1，后续元素如果与前一位差值超过题目要求就设为前一位+1。不知道这样说有没有毛病。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximumElementAfterDecrementingAndRearranging</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">        Arrays.sort(arr);</span><br><span class="line">        arr[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(Math.abs(arr[i] - arr[i-<span class="number">1</span>]) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                arr[i] = arr[i-<span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr[arr.length - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 刷题记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> medium difficulty </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Leetcode 981. 基于时间的键值存储</title>
       <link href="/2021/07/11/leetcode-981/"/>
       <url>/2021/07/11/leetcode-981/</url>
