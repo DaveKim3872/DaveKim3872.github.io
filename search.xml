@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Leetcode 74. 搜索二维矩阵</title>
+      <link href="/2021/07/15/leetcode-74/"/>
+      <url>/2021/07/15/leetcode-74/</url>
+      
+        <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/search-a-2d-matrix/">https://leetcode-cn.com/problems/search-a-2d-matrix/</a></p><p>题目比较简单，一上来的想法是二分，因为从题干可以看出这个矩阵其实可以看作一位数组处理。需要转换的逻辑只有<code>mid</code>的含义。由于题目输入是二维矩阵，此时的<code>mid</code>代表的其实是假设<code>flatten</code>到一维后的<code>index</code>，所以要转换成二维坐标<code>(mid/n, mid%n)</code>处理。</p><p>继续注意二分的各种边界问题～</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">searchMatrix</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = matrix.length, n = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = m * n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt; right) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = left + right + <span class="number">1</span> &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(matrix[mid / n][mid % n] &lt;= target) &#123;</span><br><span class="line">                left = mid;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                right = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (matrix[left / n][left % n] == target);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 刷题记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> medium difficulty </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【F1 2020】澳大利亚计时圈（持续更新）</title>
       <link href="/2021/07/15/australia-tt-1-20-7/"/>
       <url>/2021/07/15/australia-tt-1-20-7/</url>
