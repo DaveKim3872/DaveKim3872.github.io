@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>快速幂和快速幂求余</title>
+      <link href="/2021/07/22/quick-pow-mod/"/>
+      <url>/2021/07/22/quick-pow-mod/</url>
+      
+        <content type="html"><![CDATA[<p>题目：</p><ul><li><p><a href="https://leetcode-cn.com/problems/shu-zhi-de-zheng-shu-ci-fang-lcof/">剑指 Offer 16. 数值的整数次方 - 力扣（LeetCode） (leetcode-cn.com)</a></p></li><li><p><a href="https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof/">剑指 Offer 14- II. 剪绳子 II - 力扣（LeetCode） (leetcode-cn.com)</a></p></li></ul><h2 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h2><p>例子： $x^{11}$</p><p>原理：</p><ol><li>将要求的幂的指数转为二进制形式，如11转换为1011。因此$x^{11}=x^{2^{3}+2^{1}+2^{0}}$</li><li>由于$x^{2^{3}+2^{1}+2^{0}}=x^{2^{3}} \times x^{2^{1}} \times x^{2^{0}}$，也就是只需要将每一位1所对应的权重相乘</li><li>实现方法就是首先初始化<code>long b = n</code>和<code>double res = 1.0</code>，使用按位与1运算判断最小位是否为1。如果为1，则<code>res</code>乘上此时的底数<code>x</code>。操作完成后<code>b</code>需要右移一位。</li><li>在进入下一次循环之前，需要让底数的指数翻倍<code>x *= x</code>，以匹配右移后的<code>b</code>。</li></ol><p>剑16代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">myPow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">long</span> b = n;</span><br><span class="line">        <span class="keyword">double</span> res = <span class="number">1.0</span>;</span><br><span class="line">        <span class="keyword">if</span>(b &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            x = <span class="number">1</span> / x;</span><br><span class="line">            b = -b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(b &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>((b &amp; <span class="number">1</span>) == <span class="number">1</span>)&#123;</span><br><span class="line">                res *= x;</span><br><span class="line">            &#125;</span><br><span class="line">            x *= x;</span><br><span class="line">            b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="快速幂求余"><a href="#快速幂求余" class="headerlink" title="快速幂求余"></a>快速幂求余</h2><p>剑14-II：这道题虽然可以直接用上述的快速幂封装方法代替<code>Math.pow()</code>或者<code>a ** b</code>，但是<a href="https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof/solution/mian-shi-ti-14-ii-jian-sheng-zi-iitan-xin-er-fen-f/">K神用的方法</a>看起来更牛逼，还是学习一下。</p><p>如果直接使用封装的快速幂方法，则需要修改如下。依据是求余的性质<br>$$<br>(x y) \odot p=[(x \odot p)(y \odot p)] \odot p<br>$$</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">myPow</span><span class="params">(<span class="keyword">long</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">long</span> res = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span>(n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>((n &amp; <span class="number">1</span>) == <span class="number">1</span>) &#123;</span><br><span class="line">      res *= x;</span><br><span class="line">      res = res % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    n = n &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    x *= x;</span><br><span class="line">    x = x % mod;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后把剑14-I的解法套过来就好～</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 刷题记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> medium difficulty </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode 343. 整数拆分 / 剑指offer14-I 剪绳子</title>
+      <link href="/2021/07/21/integer-break/"/>
+      <url>/2021/07/21/integer-break/</url>
+      
+        <content type="html"><![CDATA[<p>柯西不等式 假设都相等的时候乘积最大 最后会转化成 $y = x^{\frac{1}{x}}$求极大值 直接用wolfram求求</p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/davekim3872/blogpics@master/uPic/USDkXj.png" alt="USDkXj"></p><p>用2和3试一下 发现3的结果更大</p><p>2只能分成1x1</p><p>3只能分成1x1x1或者1x2 后者大</p><p>商为a 余数为b 做如下分类讨论</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">integerBreak</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">3</span>) <span class="keyword">return</span> n-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> a = n / <span class="number">3</span>, b = n % <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">if</span>(b == <span class="number">0</span>) <span class="keyword">return</span> (<span class="keyword">int</span>)Math.pow(<span class="number">3</span>, a);</span><br><span class="line">        <span class="keyword">if</span>(b == <span class="number">1</span>) <span class="keyword">return</span> (<span class="keyword">int</span>)Math.pow(<span class="number">3</span>, a-<span class="number">1</span>) * <span class="number">4</span>;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)Math.pow(<span class="number">3</span>, a) * <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 刷题记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> medium difficulty </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>二叉树的层序遍历</title>
       <link href="/2021/07/20/binary-tree-bfs/"/>
       <url>/2021/07/20/binary-tree-bfs/</url>
