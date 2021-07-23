@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://davekim3872.github.io/2021/07/23/spain-tt-1-16-5/</loc>
+    <lastmod>2021-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://davekim3872.github.io/2021/07/15/australia-tt-1-20-7/</loc>
+    <lastmod>2021-07-23</lastmod>
+  </url>
+  <url>
     <loc>https://davekim3872.github.io/2021/07/23/finite-state-machine/</loc>
     <lastmod>2021-07-23</lastmod>
   </url>
@@ -22,10 +30,6 @@
   </url>
   <url>
     <loc>https://davekim3872.github.io/2021/07/15/leetcode-74/</loc>
-    <lastmod>2021-07-15</lastmod>
-  </url>
-  <url>
-    <loc>https://davekim3872.github.io/2021/07/15/australia-tt-1-20-7/</loc>
     <lastmod>2021-07-15</lastmod>
   </url>
   <url>
