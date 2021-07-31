@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>剑指offer 38. 字符串的排列</title>
+      <link href="/2021/07/31/string-permutation/"/>
+      <url>/2021/07/31/string-permutation/</url>
+      
+        <content type="html"><![CDATA[<p>从今天起重新做人，打算用python刷题。因为java用得太少，感觉语法和类型没有肌肉记忆总会忘。py经常用，忘的概率会小一点点。</p><p>主要思路：</p><ul><li>递归，DFS，剪枝。</li><li>递归终止：当DFS进行到<code>len(s)-1</code>时说明当前分支深度搜索已经完成，返回一个字符串。</li><li>递推：当DFS进行到第<code>x</code>位时，依次递推将<code>x</code>位和<code>range(x, len(s)-1)</code>位置的第<code>i</code>位交换，然后进入下一层递归<code>dfs(x+1)</code>，递归结束返回当前一层后将交换的两位还原，全当无事发生。</li><li>剪枝：例如<code>abbcc</code>的输入字符串可能会导致两位交换后的DFS过程不能说是毫无差别，只能说是完全一致。这种情况在每一层递归的时候新建一个hashset保存本层已经固定处理过的字符，而在递推的过程中就可以对已经固定过的字符进行剪枝操作。</li></ul><p>代码：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">permutation</span>(<span class="params">self, s: str</span>) -&gt; List[str]:</span></span><br><span class="line">    res = []</span><br><span class="line">    s_ = list(s)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">recur</span>(<span class="params">x</span>):</span></span><br><span class="line">        <span class="keyword">if</span> x == len(s_) - <span class="number">1</span>:</span><br><span class="line">            res.append(<span class="string">&#x27;&#x27;</span>.join(s_))</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        dic = set()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(x, len(s_)):</span><br><span class="line">            <span class="keyword">if</span> s_[i] <span class="keyword">in</span> dic:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            dic.add(s_[i])</span><br><span class="line">            s_[x], s_[i] = s_[i], s_[x]</span><br><span class="line">            recur(x + <span class="number">1</span>)</span><br><span class="line">            s_[x], s_[i] = s_[i], s_[x]</span><br><span class="line">    recur(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 刷题记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> DFS </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【F1 2021】西班牙计时圈（持续更新）</title>
       <link href="/2021/07/23/spain-tt-1-16-5/"/>
       <url>/2021/07/23/spain-tt-1-16-5/</url>
