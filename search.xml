@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Leetcode 400. 第N位数字</title>
+      <link href="/2021/07/31/nth-num/"/>
+      <url>/2021/07/31/nth-num/</url>
+      
+        <content type="html"><![CDATA[<p>找规律题目。先找第几个数字，再从中取字符。</p><ul><li><code>digit</code>代表这一段<strong>数字的位数</strong>（1-9是1位，10-99是两位…）</li><li><code>times</code>代表的是当前位数对应的数量级（10， 100， 1000…）</li><li><code>count</code>代表的是当前位数、当前数量级的<strong>字符</strong>总数（比如1位的有9*1个，2位的有90*2个…）</li><li>先递推从<code>n</code>上减去每个数量级的数字总数直到剩下的<code>n</code>已经无法容纳下一级的字符总数，那么剩下的<code>n</code>就是介于两级之间了。用当前字符数的数量基数<code>times</code>加上<code>n-1</code>整除当前区段的位数就可以定位到是第几个数字了。</li><li>把这个数字变成字符串，<code>n-1</code>对<code>digit</code>的余数作为index，即可得到答案。</li></ul><p>代码：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findNthDigit</span>(<span class="params">self, n: int</span>) -&gt; int:</span></span><br><span class="line">    digit = <span class="number">1</span></span><br><span class="line">    times = <span class="number">1</span></span><br><span class="line">    count = <span class="number">9</span></span><br><span class="line">    <span class="keyword">while</span> n &gt; count:</span><br><span class="line">        n -= count</span><br><span class="line">        digit += <span class="number">1</span></span><br><span class="line">        times *= <span class="number">10</span></span><br><span class="line">        count = <span class="number">9</span> * digit * times</span><br><span class="line">    res = times + (n<span class="number">-1</span>) // digit</span><br><span class="line">    <span class="keyword">return</span> int(str(res)[(n<span class="number">-1</span>) % digit])</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 刷题记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>剑指offer 38. 字符串的排列</title>
       <link href="/2021/07/31/string-permutation/"/>
       <url>/2021/07/31/string-permutation/</url>
