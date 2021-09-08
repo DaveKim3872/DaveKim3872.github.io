@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://davekim3872.github.io/2021/09/07/revise-dl-v2/</loc>
+    <loc>https://davekim3872.github.io/2021/01/23/NLP-cheatsheet-notes/</loc>
     
     <lastmod>2021-09-08</lastmod>
     
   </url>
   
   <url>
-    <loc>https://davekim3872.github.io/2021/01/23/NLP-cheatsheet-notes/</loc>
+    <loc>https://davekim3872.github.io/2021/09/07/revise-dl-v2/</loc>
     
-    <lastmod>2021-09-07</lastmod>
+    <lastmod>2021-09-08</lastmod>
     
   </url>
   
@@ -553,13 +553,6 @@
   
   <url>
     <loc>https://davekim3872.github.io/categories/%E9%9D%A2%E8%AF%95%E5%85%AB%E8%82%A1/</loc>
-    <lastmod>2021-09-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://davekim3872.github.io/categories/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0/</loc>
     <lastmod>2021-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
